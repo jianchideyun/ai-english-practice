@@ -1,0 +1,114 @@
+/* ---------- 全局设计系统 ---------- */
+page {
+  min-height: 100%;
+  background: #f4f5fa;
+  color: #161a2b;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+.screen {
+  padding: 28rpx 28rpx 60rpx;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 28rpx;
+  box-shadow: 0 10rpx 34rpx rgba(22, 26, 43, 0.06);
+}
+
+.muted {
+  color: #7c8394;
+}
+
+.label {
+  font-size: 24rpx;
+  color: #7c8394;
+  letter-spacing: 1rpx;
+}
+
+/* 主按钮 */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(135deg, #5b5bd6 0%, #8b5cf6 100%);
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 600;
+  letter-spacing: 1rpx;
+  box-shadow: 0 14rpx 30rpx rgba(91, 91, 214, 0.28);
+}
+
+.btn-primary:active {
+  opacity: 0.86;
+  transform: scale(0.99);
+}
+
+.btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  border-radius: 24rpx;
+  background: #ffffff;
+  border: 2rpx solid #e6e8f0;
+  color: #3d4353;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.btn-ghost:active {
+  background: #f4f5fa;
+}
+
+/* 通用行 */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 空态 */
+.empty-box {
+  padding: 88rpx 40rpx;
+  text-align: center;
+}
+
+.empty-emoji {
+  font-size: 72rpx;
+  line-height: 1;
+}
+
+.empty-title {
+  display: block;
+  margin-top: 24rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2c3142;
+}
+
+.empty-desc {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #7c8394;
+  line-height: 1.6;
+}

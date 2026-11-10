@@ -1,0 +1,126 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx 28rpx 60rpx;
+  box-sizing: border-box;
+}
+
+/* ---------- 概览卡 ---------- */
+.head-card {
+  padding: 32rpx 32rpx 30rpx;
+  border-radius: 30rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 32rpx rgba(22, 26, 43, 0.06);
+}
+
+.head-num {
+  font-size: 56rpx;
+  font-weight: 800;
+  color: #161a2b;
+  line-height: 1;
+}
+
+.head-unit {
+  margin-left: 12rpx;
+  font-size: 25rpx;
+  color: #7c8394;
+}
+
+.head-clear {
+  padding: 10rpx 22rpx;
+  border-radius: 999rpx;
+  background: #fdeff1;
+  font-size: 23rpx;
+  color: #d62d4a;
+}
+
+.head-clear:active {
+  opacity: 0.8;
+}
+
+.head-desc {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: #8f96a6;
+}
+
+.head-btn {
+  margin-top: 26rpx;
+  height: 92rpx;
+}
+
+/* ---------- 错题卡片 ---------- */
+.list {
+  margin-top: 30rpx;
+}
+
+.m-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 26rpx 26rpx 24rpx;
+  margin-bottom: 18rpx;
+  border-radius: 26rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 26rpx rgba(22, 26, 43, 0.05);
+}
+
+.m-left {
+  width: 56rpx;
+  padding-top: 4rpx;
+}
+
+.m-rank {
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: #f4f5fa;
+  color: #9aa1b1;
+  font-size: 22rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+.m-en {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #14182a;
+}
+
+.m-count {
+  margin-left: 14rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  background: #fdeff1;
+  color: #d62d4a;
+  font-size: 20rpx;
+  line-height: 1.5;
+}
+
+.m-phonetic {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: #a3a9b6;
+}
+
+.m-zh {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 27rpx;
+  color: #4a5164;
+}
+
+.m-example {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 23rpx;
+  line-height: 1.55;
+  color: #9aa1b1;
+}
+
+.empty-btn {
+  margin-top: 40rpx;
+}

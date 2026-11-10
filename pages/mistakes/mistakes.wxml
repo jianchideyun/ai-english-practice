@@ -1,0 +1,45 @@
+<view class="page">
+
+  <block wx:if="{{!empty}}">
+    <!-- 概览 -->
+    <view class="head-card">
+      <view class="row-between">
+        <view>
+          <text class="head-num">{{count}}</text>
+          <text class="head-unit">个词待巩固</text>
+        </view>
+        <view class="head-clear" bindtap="clearAll">
+          <text>清空</text>
+        </view>
+      </view>
+      <text class="head-desc">答对一次，这个词就会从错题本里减一次。</text>
+      <view class="btn-primary head-btn" bindtap="practiceAll">重练这些词</view>
+    </view>
+
+    <!-- 错题列表 -->
+    <view class="list">
+      <view class="m-card" wx:for="{{list}}" wx:key="id">
+        <view class="m-left">
+          <text class="m-rank">{{index + 1}}</text>
+        </view>
+        <view class="grow">
+          <view class="row">
+            <text class="m-en">{{item.en}}</text>
+            <text class="m-count">错 {{item.count}} 次</text>
+          </view>
+          <text class="m-phonetic">{{item.phonetic}}</text>
+          <text class="m-zh">{{item.zh}}</text>
+          <text class="m-example">{{item.example}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 空态 -->
+  <view class="empty-box" wx:else>
+    <text class="empty-emoji">✨</text>
+    <text class="empty-title">错题本是空的</text>
+    <text class="empty-desc">要么你还没开始练，要么你已经全对了。</text>
+    <view class="btn-primary empty-btn" bindtap="goHome">去闯一关</view>
+  </view>
+</view>

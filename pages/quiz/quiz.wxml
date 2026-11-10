@@ -1,0 +1,68 @@
+<view class="quiz-page">
+
+  <!-- 顶部信息 -->
+  <view class="hud">
+    <view class="progress">
+      <view class="progress-inner" style="width:{{progressPercent}}%"></view>
+    </view>
+    <view class="hud-row">
+      <text class="hud-index">{{indexText}}</text>
+      <view class="hearts">
+        <text class="heart {{item.on ? '' : 'heart-off'}}" wx:for="{{hearts}}" wx:key="id">♥</text>
+      </view>
+      <text class="hud-score">{{score}} 分</text>
+    </view>
+  </view>
+
+  <!-- 词库为空 -->
+  <view class="empty-box" wx:if="{{total === 0}}">
+    <text class="empty-emoji">🗂️</text>
+    <text class="empty-title">这一组还没有词</text>
+    <text class="empty-desc">换个分类再试试。</text>
+  </view>
+
+  <block wx:else>
+    <!-- 题干 -->
+    <view class="q-card">
+      <view class="q-tag">
+        <text class="q-tag-text">{{current.typeLabel}}</text>
+      </view>
+      <text class="q-prompt">{{current.promptText}}</text>
+      <text class="q-phonetic" wx:if="{{current.promptSub}}">{{current.promptSub}}</text>
+    </view>
+
+    <!-- 选项 -->
+    <view class="options">
+      <view
+        class="opt {{answered && index === current.answerIndex ? 'opt-right' : ''}} {{answered && index === selected && !isCorrect ? 'opt-wrong' : ''}} {{answered && index !== selected && index !== current.answerIndex ? 'opt-dim' : ''}}"
+        wx:for="{{current.options}}"
+        wx:key="text"
+        data-index="{{index}}"
+        bindtap="handleOption"
+      >
+        <text class="opt-letter">{{item.letter}}</text>
+        <text class="opt-text">{{item.text}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- 答题反馈面板 -->
+<view class="sheet" wx:if="{{answered}}">
+  <view class="sheet-head">
+    <text class="sheet-icon {{isCorrect ? 'i-ok' : 'i-no'}}">{{isCorrect ? '✓' : '✕'}}</text>
+    <text class="sheet-title">{{feedbackTitle}}</text>
+    <text class="sheet-combo" wx:if="{{combo > 1}}">{{combo}} 连击</text>
+  </view>
+
+  <view class="sheet-word">
+    <text class="sheet-en">{{current.en}}</text>
+    <text class="sheet-phonetic">{{current.phonetic}}</text>
+  </view>
+  <text class="sheet-zh">{{current.zh}}</text>
+  <text class="sheet-example">{{current.example}}</text>
+  <text class="sheet-example-zh">{{current.exampleZh}}</text>
+  <text class="sheet-note" wx:if="{{current.note}}">💡 {{current.note}}</text>
+
+  <view class="btn-primary sheet-btn" bindtap="handleNext">{{nextText}}</view>
+</view>

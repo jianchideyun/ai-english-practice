@@ -1,0 +1,259 @@
+/* ---------- 顶部主卡 ---------- */
+.hero {
+  padding: 40rpx 36rpx 36rpx;
+  border-radius: 34rpx;
+  background: linear-gradient(145deg, #4f46e5 0%, #7c3aed 52%, #a855f7 100%);
+  box-shadow: 0 20rpx 44rpx rgba(79, 70, 229, 0.3);
+  color: #ffffff;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-badge {
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.hero-count {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-title {
+  display: block;
+  margin-top: 28rpx;
+  font-size: 46rpx;
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: 0.5rpx;
+}
+
+.hero-desc {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  margin-top: 32rpx;
+  padding: 22rpx 0;
+  border-radius: 22rpx;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 38rpx;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stat-line {
+  width: 2rpx;
+  height: 44rpx;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96rpx;
+  margin-top: 28rpx;
+  border-radius: 22rpx;
+  background: #ffffff;
+  color: #4f46e5;
+  font-size: 32rpx;
+  font-weight: 700;
+  letter-spacing: 1rpx;
+}
+
+.hero-btn:active {
+  opacity: 0.9;
+}
+
+.hero-btn-arrow {
+  margin-left: 12rpx;
+  font-size: 30rpx;
+}
+
+/* ---------- 分区标题 ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  margin: 44rpx 4rpx 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #161a2b;
+}
+
+.section-sub {
+  margin-left: 14rpx;
+  font-size: 24rpx;
+  color: #9aa1b1;
+}
+
+/* ---------- 分类卡片 ---------- */
+.cat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cat-card {
+  width: 48.5%;
+  margin-bottom: 22rpx;
+  padding: 26rpx 24rpx 24rpx;
+  border-radius: 26rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 30rpx rgba(22, 26, 43, 0.06);
+}
+
+.cat-card:active {
+  transform: scale(0.985);
+}
+
+.cat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cat-emoji {
+  font-size: 40rpx;
+  line-height: 1;
+}
+
+.cat-progress {
+  font-size: 22rpx;
+  color: #9aa1b1;
+}
+
+.cat-name {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 29rpx;
+  font-weight: 600;
+  color: #1c2130;
+}
+
+.cat-desc {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #8f96a6;
+  line-height: 1.5;
+  height: 64rpx;
+}
+
+.cat-bar {
+  margin-top: 16rpx;
+  height: 8rpx;
+  border-radius: 999rpx;
+  background: #eff1f7;
+  overflow: hidden;
+}
+
+.cat-bar-inner {
+  height: 100%;
+  border-radius: 999rpx;
+  transition: width 0.3s ease;
+}
+
+/* ---------- 功能入口 ---------- */
+.entry-card {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 28rpx;
+  margin-bottom: 18rpx;
+  border-radius: 26rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 30rpx rgba(22, 26, 43, 0.05);
+}
+
+.entry-card:active {
+  background: #fafbff;
+}
+
+.entry-emoji {
+  width: 76rpx;
+  height: 76rpx;
+  margin-right: 22rpx;
+  border-radius: 20rpx;
+  background: #f2f3fb;
+  font-size: 36rpx;
+  line-height: 76rpx;
+  text-align: center;
+}
+
+.entry-name {
+  display: block;
+  font-size: 29rpx;
+  font-weight: 600;
+  color: #1c2130;
+}
+
+.entry-desc {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: #8f96a6;
+}
+
+.entry-arrow {
+  font-size: 40rpx;
+  color: #c6cbd8;
+  line-height: 1;
+}
+
+.footer-note {
+  display: block;
+  margin-top: 36rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #b3b9c7;
+}
+
+/* 分享按钮：抹掉原生 button 的默认外观，保持和入口卡一致 */
+.share-entry {
+  width: 100%;
+  margin: 0 0 18rpx;
+  padding: 26rpx 28rpx;
+  border: none;
+  border-radius: 26rpx;
+  background: #ffffff;
+  text-align: left;
+  line-height: normal;
+  font-size: inherit;
+}
+
+.share-entry::after {
+  border: none;
+}

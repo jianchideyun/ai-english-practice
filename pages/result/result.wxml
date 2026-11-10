@@ -1,0 +1,72 @@
+<view class="screen">
+
+  <block wx:if="{{result}}">
+    <!-- 结果主卡 -->
+    <view class="result-hero">
+      <text class="result-emoji">{{emoji}}</text>
+      <text class="result-title">{{title}}</text>
+      <text class="result-sub">{{subtitle}}</text>
+
+      <view class="score-box">
+        <text class="score-num">{{result.score}}</text>
+        <text class="score-unit">分</text>
+      </view>
+    </view>
+
+    <!-- 数据条 -->
+    <view class="metrics card">
+      <view class="metric">
+        <text class="metric-num">{{result.correct}}</text>
+        <text class="metric-label">答对</text>
+      </view>
+      <view class="metric-line"></view>
+      <view class="metric">
+        <text class="metric-num metric-warn">{{result.wrongCount}}</text>
+        <text class="metric-label">答错</text>
+      </view>
+      <view class="metric-line"></view>
+      <view class="metric">
+        <text class="metric-num">{{result.maxCombo}}</text>
+        <text class="metric-label">最高连击</text>
+      </view>
+      <view class="metric-line"></view>
+      <view class="metric">
+        <text class="metric-num">{{result.accuracy}}%</text>
+        <text class="metric-label">正确率</text>
+      </view>
+    </view>
+
+    <!-- 错题回顾 -->
+    <block wx:if="{{result.wrongCount > 0}}">
+      <view class="section-head">
+        <text class="section-title">这一关错的词</text>
+        <text class="section-sub">{{result.wrongCount}} 个已进错题本</text>
+      </view>
+
+      <view class="wrong-card card">
+        <view class="wrong-item" wx:for="{{result.wrongList}}" wx:key="id">
+          <view class="grow">
+            <view class="row">
+              <text class="wrong-en">{{item.en}}</text>
+              <text class="wrong-phonetic">{{item.phonetic}}</text>
+            </view>
+            <text class="wrong-zh">{{item.zh}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class="actions">
+      <view class="btn-primary" bindtap="playAgain">再来一关</view>
+      <view class="btn-ghost action-ghost" bindtap="goHome">回到首页</view>
+    </view>
+  </block>
+
+  <!-- 无数据 -->
+  <view class="empty-box" wx:else>
+    <text class="empty-emoji">{{emoji}}</text>
+    <text class="empty-title">{{title}}</text>
+    <text class="empty-desc">{{subtitle}}</text>
+    <view class="btn-primary empty-btn" bindtap="goHome">回到首页</view>
+  </view>
+</view>

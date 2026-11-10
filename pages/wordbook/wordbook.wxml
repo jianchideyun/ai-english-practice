@@ -1,0 +1,69 @@
+<view class="page">
+
+  <!-- 搜索 -->
+  <view class="search-bar">
+    <text class="search-icon">🔍</text>
+    <input
+      class="search-input"
+      value="{{keyword}}"
+      placeholder="搜英文或中文，如 Generate、生成"
+      placeholder-class="search-ph"
+      confirm-type="search"
+      bindinput="handleInput"
+    />
+    <text class="search-clear" wx:if="{{keyword}}" bindtap="clearKeyword">清空</text>
+  </view>
+
+  <!-- 分类筛选 -->
+  <scroll-view class="chips" scroll-x="true" show-scrollbar="false">
+    <view
+      class="chip {{activeCat === item.id ? 'chip-on' : ''}}"
+      wx:for="{{chips}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="selectCat"
+    >
+      <text>{{item.name}}</text>
+    </view>
+  </scroll-view>
+
+  <text class="count-text">{{countText}}</text>
+
+  <!-- 列表 -->
+  <view class="list">
+    <view
+      class="word-card"
+      wx:for="{{list}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="toggleItem"
+    >
+      <view class="word-main">
+        <view class="grow">
+          <view class="row">
+            <text class="word-en">{{item.en}}</text>
+            <text class="word-badge {{item.levelClass}}">{{item.level}}</text>
+          </view>
+          <text class="word-phonetic">{{item.phonetic}}</text>
+        </view>
+        <text class="word-arrow">{{expanded === item.id ? '⌃' : '⌄'}}</text>
+      </view>
+
+      <text class="word-zh">{{item.zh}}</text>
+
+      <view class="word-detail" wx:if="{{expanded === item.id}}">
+        <text class="detail-en">{{item.example}}</text>
+        <text class="detail-zh">{{item.exampleZh}}</text>
+        <text class="detail-note" wx:if="{{item.note}}">💡 {{item.note}}</text>
+        <text class="detail-cat">分类：{{item.catName}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空态 -->
+  <view class="empty-box" wx:if="{{list.length === 0}}">
+    <text class="empty-emoji">🔍</text>
+    <text class="empty-title">没有匹配的词</text>
+    <text class="empty-desc">换个关键词，或点「全部」看看。</text>
+  </view>
+</view>

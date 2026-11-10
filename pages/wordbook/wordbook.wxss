@@ -1,0 +1,178 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx 28rpx 60rpx;
+  box-sizing: border-box;
+}
+
+/* ---------- 搜索 ---------- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  padding: 0 24rpx;
+  border-radius: 22rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(22, 26, 43, 0.06);
+}
+
+.search-icon {
+  font-size: 28rpx;
+  margin-right: 14rpx;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 27rpx;
+  color: #1c2130;
+  height: 88rpx;
+}
+
+.search-ph {
+  color: #b3b9c7;
+  font-size: 26rpx;
+}
+
+.search-clear {
+  padding-left: 16rpx;
+  font-size: 24rpx;
+  color: #5b5bd6;
+}
+
+/* ---------- 分类 chips ---------- */
+.chips {
+  white-space: nowrap;
+  margin-top: 24rpx;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 64rpx;
+  padding: 0 26rpx;
+  margin-right: 16rpx;
+  border-radius: 999rpx;
+  background: #ffffff;
+  border: 2rpx solid #eceef5;
+  font-size: 25rpx;
+  color: #5d6475;
+}
+
+.chip-on {
+  background: #5b5bd6;
+  border-color: #5b5bd6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.count-text {
+  display: block;
+  margin: 24rpx 4rpx 16rpx;
+  font-size: 23rpx;
+  color: #9aa1b1;
+}
+
+/* ---------- 词卡 ---------- */
+.word-card {
+  padding: 26rpx 26rpx 22rpx;
+  margin-bottom: 18rpx;
+  border-radius: 26rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 26rpx rgba(22, 26, 43, 0.05);
+}
+
+.word-card:active {
+  background: #fafbff;
+}
+
+.word-main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.word-en {
+  font-size: 33rpx;
+  font-weight: 700;
+  color: #14182a;
+}
+
+.word-badge {
+  margin-left: 14rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  font-size: 20rpx;
+  line-height: 1.4;
+}
+
+.lv-new {
+  background: #f2f3f8;
+  color: #8f96a6;
+}
+
+.lv-mid {
+  background: #fff4e5;
+  color: #b45309;
+}
+
+.lv-ok {
+  background: #e9f9f0;
+  color: #15803d;
+}
+
+.word-phonetic {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  color: #a3a9b6;
+}
+
+.word-arrow {
+  margin-left: 12rpx;
+  font-size: 28rpx;
+  color: #c6cbd8;
+  line-height: 1.4;
+}
+
+.word-zh {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 27rpx;
+  color: #4a5164;
+}
+
+/* ---------- 展开详情 ---------- */
+.word-detail {
+  margin-top: 20rpx;
+  padding: 20rpx 22rpx;
+  border-radius: 18rpx;
+  background: #f7f8fc;
+}
+
+.detail-en {
+  display: block;
+  font-size: 25rpx;
+  line-height: 1.6;
+  color: #2c3142;
+}
+
+.detail-zh {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 23rpx;
+  line-height: 1.6;
+  color: #8f96a6;
+}
+
+.detail-note {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 23rpx;
+  line-height: 1.55;
+  color: #5b5bd6;
+}
+
+.detail-cat {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 21rpx;
+  color: #b3b9c7;
+}

@@ -1,0 +1,95 @@
+<view class="screen">
+
+  <!-- 顶部主卡 -->
+  <view class="hero">
+    <view class="hero-top">
+      <text class="hero-badge">AI 界面英文 · 闯关</text>
+      <text class="hero-count">{{overview.learned}}/{{overview.totalWords}}</text>
+    </view>
+
+    <text class="hero-title">看懂界面上的每一个按钮</text>
+    <text class="hero-desc">每关 10 题，3 次机会。答对连击越多，分数越高。</text>
+
+    <view class="hero-stats">
+      <view class="stat">
+        <text class="stat-num">{{overview.learned}}</text>
+        <text class="stat-label">已学词</text>
+      </view>
+      <view class="stat-line"></view>
+      <view class="stat">
+        <text class="stat-num">{{overview.accuracy}}%</text>
+        <text class="stat-label">正确率</text>
+      </view>
+      <view class="stat-line"></view>
+      <view class="stat">
+        <text class="stat-num">{{overview.bestCombo}}</text>
+        <text class="stat-label">最高连击</text>
+      </view>
+    </view>
+
+    <view class="hero-btn" bindtap="startAll">
+      <text>开始闯关</text>
+      <text class="hero-btn-arrow">→</text>
+    </view>
+  </view>
+
+  <!-- 分类关卡 -->
+  <view class="section-head">
+    <text class="section-title">选择分类</text>
+    <text class="section-sub">按场景专项练习</text>
+  </view>
+
+  <view class="cat-grid">
+    <view
+      class="cat-card"
+      wx:for="{{categories}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="startCategory"
+    >
+      <view class="cat-top">
+        <text class="cat-emoji">{{item.emoji}}</text>
+        <text class="cat-progress">{{item.progressText}}</text>
+      </view>
+      <text class="cat-name">{{item.name}}</text>
+      <text class="cat-desc">{{item.desc}}</text>
+      <view class="cat-bar">
+        <view class="cat-bar-inner" style="width:{{item.percent}}%;background:{{item.color}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能入口 -->
+  <view class="section-head">
+    <text class="section-title">更多</text>
+  </view>
+
+  <view class="entry-card" bindtap="openWordbook">
+    <text class="entry-emoji">📖</text>
+    <view class="grow">
+      <text class="entry-name">完整词库</text>
+      <text class="entry-desc">支持搜索，含音标和例句</text>
+    </view>
+    <text class="entry-arrow">›</text>
+  </view>
+
+  <view class="entry-card" bindtap="openMistakes">
+    <text class="entry-emoji">🔁</text>
+    <view class="grow">
+      <text class="entry-name">错题本</text>
+      <text class="entry-desc">{{mistakeCount}} 个词还没拿下</text>
+    </view>
+    <text class="entry-arrow">›</text>
+  </view>
+
+  <button class="entry-card share-entry" open-type="share">
+    <text class="entry-emoji">💌</text>
+    <view class="grow">
+      <text class="entry-name">分享给朋友</text>
+      <text class="entry-desc">对方在微信里点开就能玩</text>
+    </view>
+    <text class="entry-arrow">›</text>
+  </button>
+
+  <text class="footer-note">全部内容保存在本机，不上传、不联网</text>
+</view>
