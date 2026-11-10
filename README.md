@@ -4,12 +4,15 @@
 
 界面上全是 `Generate`、`Prompt`、`Token`、`Context window`，看不懂就只能瞎点。这个项目把 84 个最常见的关键词做成 10 题一关的小测验，答错自动进错题本，一两分钟就能练一轮。
 
-提供两种形态，共用同一份词库：
+提供三种打开方式，共用同一份词库：
 
 | 形态 | 位置 | 说明 |
 |---|---|---|
 | 微信小程序 | 仓库根目录 | 原生小程序工程，用微信开发者工具打开 |
-| 电脑单文件版 | `desktop/index.html` | 双击即用，无需安装、无需联网 |
+| 网页版 | <https://jianchideyun.github.io/ai-english-practice/> | 手机 / 电脑浏览器直接打开，无需安装 |
+| 单文件版 | `docs/index.html` | 下载后双击即用，完全离线 |
+
+> 网页版通过 GitHub Pages 托管，源码即 `docs/index.html`，两者内容一致。
 
 ## 功能
 
@@ -36,8 +39,8 @@
 │   ├── words.js     词库数据（84 词 / 6 分类）
 │   ├── store.js     本地存储层，统一返回 { data, error }
 │   └── quiz.js      出题与计分，纯函数
-└── desktop/
-    └── index.html   电脑单文件版（词库由构建注入）
+└── docs/
+    └── index.html   网页版 / 单文件版（词库由构建注入）
 ```
 
 ## 运行
@@ -47,11 +50,12 @@
 1. 用微信开发者工具「导入项目」，选择本仓库根目录
 2. 没有 AppID 时选择「测试号」即可预览
 
-### 电脑版
+### 网页版 / 单人版
 
-双击 `desktop/index.html`，用 Edge / Chrome 打开即可。
+- 在线使用：手机或电脑浏览器打开 <https://jianchideyun.github.io/ai-english-practice/>
+- 离线使用：下载 [`docs/index.html`](./docs/index.html)，双击用浏览器打开
 
-键盘操作：`1`–`4` 选择选项，`Enter` 下一题，`Esc` 回首页。
+电脑上支持键盘操作：`1`–`4` 选择选项，`Enter` 下一题，`Esc` 回首页。
 
 ## 修改词库
 
@@ -74,7 +78,7 @@
 
 分类定义在 `words.js` 顶部的 `CATEGORIES`，新增分类时记得给 `id`、`name`、`desc`、`emoji`、`color`。
 
-> 电脑版是单文件，词库已内嵌其中。修改 `utils/words.js` 后需要重新注入数据才能同步，或直接编辑 `desktop/index.html` 里的 `const DATA =` 部分。
+> 网页 / 单文件版把词库内嵌在 HTML 里。修改 `utils/words.js` 后需要重新注入数据才能同步，或直接编辑 `docs/index.html` 里的 `const DATA =` 部分。
 
 ## 数据与隐私
 
