@@ -2,8 +2,10 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 英文小练 · 电脑版</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4f46e5">
+<meta name="description" content="AI 界面上的英文，一关一关记牢。84 个 AI 产品界面高频词，闯关式记忆，离线可用。">
+<title>AI 英文小练</title>
 <style>
 :root{
   --bg:#f4f5fa; --card:#fff; --ink:#161a2b; --sub:#7c8394; --line:#e8eaf2;
@@ -12,9 +14,12 @@
 *{box-sizing:border-box}
 body{
   margin:0; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%; text-size-adjust:100%;
   font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  overscroll-behavior-y:contain;
 }
-.app{max-width:620px;margin:0 auto;padding:26px 20px 72px}
+.app{max-width:620px;margin:0 auto;padding:26px 20px 72px;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+
 
 /* 顶栏 */
 .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
@@ -214,6 +219,28 @@ kbd{display:inline-block;padding:1px 5px;border:1px solid #e0e3ee;border-bottom-
 .empty .emo{font-size:34px;line-height:1}
 .empty b{display:block;margin-top:12px;font-size:14px}
 .empty p{margin:6px 0 0;font-size:12px;color:#8f96a6;line-height:1.6}
+
+/* ---------- 手机适配 ---------- */
+@media (max-width:480px){
+  .app{padding:20px 16px;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  .hero{padding:22px 20px 20px;border-radius:20px}
+  .hero h1{font-size:23px}
+  .hero p{font-size:13px}
+  .qcard{padding:28px 18px 24px;border-radius:18px}
+  .qtext{font-size:28px}
+  .opt{padding:16px 14px;font-size:15px}
+  .opt-key{width:28px;height:28px}
+  .btn,.hero-btn{height:50px;font-size:15px}
+  .grid{gap:10px}
+  .cat{padding:14px}
+  .cat-desc{height:auto;min-height:32px;font-size:11.5px}
+  .fb{padding:16px}
+  .fb-en{font-size:18px}
+  .fb-ex{font-size:13px}
+  .wcard{padding:16px 14px}
+  .search{height:46px}
+  .hint{display:none}
+}
 </style>
 </head>
 <body>
